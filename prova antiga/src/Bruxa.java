@@ -11,7 +11,10 @@ public class Bruxa extends Monstro{
     public boolean aprenderFeitico(String nome, int poder){
         for (int i = 0; i < feitico.length; i++) {
             if (feitico[i] == null) {
-                System.out.println("feitco aprendido ");
+                feitico[i] = new Feitico();
+                feitico[i].setNome(nome);
+                feitico[i].setPoder(poder);
+                System.out.println("Feitico: " + feitico[i].getNome() + " com poder de: " + feitico[i].getPoder() + " aprendido" );
                 return true;
             }
         }
@@ -31,7 +34,6 @@ public class Bruxa extends Monstro{
         for (int i = 0; i < feitico.length; i++) {
             if (feitico[i] != null){
                 feitico[posicao] = null;
-
             }
         }
     }
@@ -39,7 +41,12 @@ public class Bruxa extends Monstro{
     public void lancarFeiticoAlvo(Monstro monstroAlvo, int posicao){
         for (int i = 0; i < feitico.length; i++) {
             if (feitico[i] != null){
-                System.out.println(feitico[posicao] + "lancado");
+                System.out.println(feitico[posicao].getNome() + " lancado");
+                monstroAlvo.setVida(monstroAlvo.getVida() - feitico[posicao].getPoder());
+                super.setEnergia(getEnergia()-10);
+                if(monstroAlvo.getVida() <= 0){
+                    System.out.println("monstro atacado morreu");
+                }
             }
 
         }

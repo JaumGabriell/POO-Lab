@@ -34,7 +34,7 @@ public class Monstro {
     }
 
     public void assustar(Monstro monstroAlvo){
-        monstroAlvo.vida -= 10;
+        monstroAlvo.setVida(getVida()-3);
         System.out.println("Turma da monica jovem umbra");
 
     }

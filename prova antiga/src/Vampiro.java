@@ -18,7 +18,7 @@ public class Vampiro extends Monstro {
     }
 
     public void atacarComMordida(Monstro monstroAlvo){
-        monstroAlvo.setVida(getVida()-3);
+        monstroAlvo.setVida(getVida()-10);
         System.out.println("monstro mamado");
 
     }

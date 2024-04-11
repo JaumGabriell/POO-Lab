@@ -1,7 +1,19 @@
 public class Main {
     public static void main(String[] args) {
-        Monstro monstro1 = new Bruxa(10,100,50);
+        Bruxa bruxa = new Bruxa(20,40,50);
+        Zumbi zumbi = new Zumbi(50,90,40);
+        Vampiro vampiro = new Vampiro(1000,100,90);
 
-        monstro1.getIdade();
+        bruxa.aprenderFeitico("Avada Kedavra", 100);
+
+        bruxa.listarFeitcos();
+
+        vampiro.transformar();
+        vampiro.recuperarVida();
+        vampiro.atacarComMordida(bruxa);
+
+        bruxa.lancarFeiticoAlvo(vampiro,0);
+
+
     }
 }
